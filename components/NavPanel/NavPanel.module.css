@@ -1,0 +1,24 @@
+.container {
+  height: 32px;
+  background-color: #134649;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.pathsWrap {
+  padding-left: 7px;
+  display: flex;
+  flex-direction: row;
+}
+
+.pathItem {
+  margin-left: 3px;
+}
+
+.pathItem span {
+  margin-left: 3px;
+}

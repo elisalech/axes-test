@@ -1,0 +1,33 @@
+.titleWrap {
+  display: flex;
+  align-items: center;
+}
+
+.subtitle {
+  width: 50%;
+  text-align: right;
+  margin-right: 20px;
+  justify-content: flex-end;
+  height: auto;
+  border-right: 1px solid #dadcdb;
+  padding-right: 20px;
+  line-height: 1.8;
+}
+
+.icon {
+  width: calc(50% - 50px);
+  position: relative;
+  cursor: pointer;
+}
+
+.icon::before {
+  content: "";
+  display: inline-block;
+  background-color: #dadcdb;
+  width: 15px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  margin: 0 5px 0 0;
+}

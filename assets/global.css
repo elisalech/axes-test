@@ -1,0 +1,33 @@
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  color: #104849;
+}
+
+main {
+  max-width: 1000px;
+  margin: 50px;
+}
+
+.labels_wrap {
+  color: #aeafb1;
+  display: flex;
+}
+
+.label_property {
+  width: 50%;
+  text-align: right;
+  margin-right: 20px;
+  justify-content: flex-end;
+  height: auto;
+  padding-right: 20px;
+}
