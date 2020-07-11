@@ -24,7 +24,12 @@ const IndexPage = ({ categories, paths }: Props) => {
           <div>Значения</div>
         </div>
         {categories?.map((category, i) => (
-          <Category title={category.title} items={category.items} key={i} />
+          <Category
+            isLastCategory={i === categories.length - 1}
+            title={category.title}
+            items={category.items}
+            key={i}
+          />
         ))}
       </main>
     </>

@@ -1,7 +1,7 @@
-export type CategoryType = {
+export interface CategoryType {
   title: string;
   items: Array<CategoryItemType | SubCategoryType>;
-};
+}
 
 export interface CategoryItemType {
   property: string;

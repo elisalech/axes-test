@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import styles from "./Category.module.css";
 
@@ -7,8 +7,23 @@ import CategotyItem from "../CategoryItem";
 import Switcher from "../Switcher";
 import SubCategory from "../SubCategory";
 
-const Category = ({ title, items }: CategoryType) => {
+interface Props extends CategoryType {
+  isLastCategory: boolean;
+}
+
+const Category = ({ title, items, isLastCategory }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [heightDiff, setHeightDiff] = useState<number>(0);
+  const itemsCollection = useRef<HTMLInputElement | any>(null);
+
+  useEffect(() => {
+    setHeightDiff(itemsCollection.current?.lastChild?.clientHeight + 5);
+  }, []);
+
+  const height: string = isLastCategory
+    ? `calc(100% + 50px)`
+    : `calc(100% - ${heightDiff}px)`;
+
   return (
     <div className={styles.container}>
       <div className={styles.titleWrap}>
@@ -20,14 +35,31 @@ const Category = ({ title, items }: CategoryType) => {
           fill="#6C6C6C"
         />
       </div>
-      {isOpen &&
-        items.map((item, i) =>
-          isSubCategory(item) ? (
-            <SubCategory subtitle={item.subtitle} items={item.items} key={i} />
-          ) : (
-            <CategotyItem key={i} property={item.property} value={item.value} />
-          )
-        )}
+      {isOpen && (
+        <div ref={itemsCollection}>
+          <div
+            style={{
+              height,
+            }}
+            className={styles.divider}
+          ></div>
+          {items.map((item, i) =>
+            isSubCategory(item) ? (
+              <SubCategory
+                subtitle={item.subtitle}
+                items={item.items}
+                key={i}
+              />
+            ) : (
+              <CategotyItem
+                key={i}
+                property={item.property}
+                value={item.value}
+              />
+            )
+          )}
+        </div>
+      )}
     </div>
   );
 };
