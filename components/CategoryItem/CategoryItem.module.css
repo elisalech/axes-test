@@ -9,7 +9,7 @@
   margin-right: 20px;
   justify-content: flex-end;
   height: auto;
-  border-right: 1px solid #dadcdb;
+  /* border-right: 1px solid #dadcdb; */
   padding-right: 20px;
   line-height: 1.8;
 }
@@ -26,7 +26,6 @@
 
 .sub_value {
   padding-left: 20px;
-  border-left: 1px solid#dadcdb;
 }
 
 .value::before {
@@ -37,7 +36,7 @@
   height: 1px;
   position: absolute;
   top: 12px;
-  left: -21px;
+  left: -20px;
   margin: 0 5px 0 0;
 }
 
@@ -50,7 +49,7 @@
   position: absolute;
   top: 50%;
   margin: 0 5px 0 0;
-  left: 0;
+  left: 1px;
 }
 
 .bold {

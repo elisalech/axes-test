@@ -1,5 +1,6 @@
 .container {
   margin: 20px 0;
+  position: relative;
 }
 
 .title {
@@ -22,16 +23,20 @@
   justify-content: flex-end;
   transform: translateX(9px);
   margin-bottom: 4px;
+  z-index: 10;
 }
-
-/* .icon::before {
-  content: "";
-  display: block;
-  background-color: #000;
-  width: 10px;
-  height: 10px;
-} */
 
 .icon {
   cursor: pointer;
+}
+
+.divider {
+  width: 1px;
+  height: 100%;
+  z-index: 1;
+  background-color: #dadcdb;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 18px);
 }
